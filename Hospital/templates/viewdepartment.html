@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+{% include "header.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>viewdepartment</title>
+     <style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+</style>
+     <style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+
+
+</head>
+<body>
+<h1>View Department</h1>
+<center>
+<div class="dropdown">
+  <button class="dropbtn">Admin Account</button>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Profile</button>
+  <div class="dropdown-content">
+  <a href="adminprofile">Admin Profile</a>
+  <a href="adminchangepassword">Admin change password</a>
+  <a href="viewadmin">View Admin</a>
+  </div>
+</div>
+  <div class="dropdown">
+  <button class="dropbtn">Patient</button>
+  <div class="dropdown-content">
+  <a href="viewpatientrecord">View Patient Record</a>
+  </div>
+  </div>
+ <div class="dropdown">
+  <button class="dropbtn">Appointment</button>
+  <div class="dropdown-content">
+  <a href="#">View Pending Appointment</a>
+  <a href="#">View Approved Appointment </a>
+
+  </div>
+ </div>
+<div class="dropdown">
+  <button class="dropbtn">Treatment</button>
+  <div class="dropdown-content">
+
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Doctor</button>
+  <div class="dropdown-content">
+  <a href="adddoctor">Add Doctor</a>
+  <a href="viewdoctor">View Doctor </a>
+  <a href="addtiming">Add doctor Timing</a>
+  <a href="viewtiming">View doctor Timing</a>
+  </div>
+</div>
+    <div class="dropdown">
+  <button class="dropbtn">Settings</button>
+  <div class="dropdown-content">
+  <a href="adddepartment">Add Department</a>
+  <a href="viewdepartment">View Department</a>
+  <a href="#">Add Treatment Type</a>
+  <a href="addmedicine">Add Medicine</a>
+  <a href="viewmedicine">View Medicine</a>
+  </div>
+</div>
+ <div class="dropdown">
+  <button class="dropbtn">Availabilities</button>
+  <div class="dropdown-content">
+   <a href="room">Room Categories</a>
+   <a href="faci">New Facilities</a>
+      <a href="acco">Accomodation</a>
+      <a href="feedview">Feedbacks</a>
+  </div>
+</div><br><br>
+
+
+<table border="1px">
+    <table id="customers">
+    <tr>
+        <th>Departmentname</th>
+        <th>Description</th>
+
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{i.departmentname}}</td>
+        <td>{{i.description}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+
+</body>
+</html>

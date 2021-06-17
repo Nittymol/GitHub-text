@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+ {% include "header.html" %}
+ {% include "user.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>patientprofile</title>
+
+
+     <style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:  #f18973;
+  color: white;
+}
+</style>
+</head>
+<body>
+<center><h1>patient profile</h1></center>
+<center>
+
+
+
+<table border="1px">
+    <table id="customers">
+    <tr>
+        <th> Name</th>
+        <th>Address</th>
+        <th>mobileno</th>
+        <th>city</th>
+        <th>pincode</th>
+        <th>username</th>
+        <th>bloodgroup</th>
+        <th>Gender</th>
+        <th>Dateofbirth</th>
+        <th>Edit</th>
+
+    </tr>
+     {% for i in data %}
+    <form action="edit" method="post">
+        {% csrf_token %}
+
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.address}}</td>
+        <td>{{i.mobileno}}</td>
+        <td>{{i.city}}</td>
+        <td>{{i.pincode}}</td>
+        <td>{{i.username}}</td>
+        <td>{{i.bloodgroup}}</td>
+        <td>{{i.gender}}</td>
+        <td>{{i.dateofbirth}}</td>
+        <input type="hidden" name="id" value="{{i.id}}">
+        <td><input type="submit" value="edit"> </td>
+    </tr>
+    </form>
+    {% endfor %}
+</table>
+</table>
+</center>
+</body>
+ {% include "footer.html" %}
+</html>

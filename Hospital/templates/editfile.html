@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>editfile</title>
+</head>
+<body>
+<h1>editfile</h1>
+    <table border="1px">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phoneno</th>
+        <th>city</th>
+      <th>Pincode</th>
+      <th>username</th>
+      <th>bloodgroup</th>
+      <th>gender</th>
+      <th>dateofbirth</th>
+        <th>edit</th>
+    </tr>
+    {% for i in data %}
+    <form action="edit" method="post">
+        {% csrf_token %}
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.address}}</td>
+        <td>{{i.phoneno}}</td>
+      <td>{{i.city}}</td>
+      <td>{{i.pincode}}</td>
+      <td>{{i.username}}</td>
+      <td>{{i.bloodgroup}}</td>
+        <td>{{i.gender}}</td>
+        <td>{{i.dateofbirth}}</td>
+        <input type="hidden" name="id" value="{{i.id}}">
+        <td><input type="submit" value="edit"> </td>
+    </form>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

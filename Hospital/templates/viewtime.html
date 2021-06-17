@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+ {% include "header.html" %}
+ {% include "user.html" %}
+<html>
+<title>View Time</title>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+<body>
+
+<div class="w3-container">
+  <h2>Doctor Timings</h2>
+
+  <table class="w3-table w3-striped w3-bordered">
+    <table id="customers">
+    <tr>
+      <th>Doctor</th>
+      <th>From</th>
+      <th>To</th>
+    </tr>
+    <tr>
+      <td>Manoj Jacob</td>
+      <td>10.00am</td>
+      <td>12.00pm</td>
+    </tr>
+    <tr>
+      <td>Suresh Kumar</td>
+      <td>11.00am</td>
+      <td>2.00pm</td>
+    </tr>
+    <tr>
+      <td>fahad john</td>
+      <td>9.00am</td>
+      <td>3.00pm</td>
+    </tr>
+      <tr>
+      <td>Maria john</td>
+      <td>9.30.00am</td>
+      <td>12.00pm</td>
+    </tr>
+      <tr>
+      <td>johny Kurian</td>
+      <td>9.00am</td>
+      <td>3.00pm</td>
+    </tr>
+      <tr>
+      <td>Sumitha Kumar</td>
+      <td>10.30.00am</td>
+      <td>3.00pm</td>
+    </tr>
+      <tr>
+      <td>Sumesh Vargheese</td>
+      <td>1.00pm</td>
+      <td>6.00pm</td>
+    </tr>
+      <tr>
+      <td>Bindu Menon</td>
+      <td>9.00am</td>
+      <td>3.00pm</td>
+    </tr>
+      <tr>
+      <td>jobin mathew</td>
+      <td>10.00am</td>
+      <td>4.00pm</td>
+    </tr>
+      <tr>
+      <td>gopal k</td>
+      <td>9.00am</td>
+      <td>3.00pm</td>
+    </tr>
+      <tr>
+      <td>Mathew Menon</td>
+      <td>11.00am</td>
+      <td>4.00pm</td>
+    </tr>
+      <tr>
+      <td>Mohan John</td>
+      <td>9.30.00am</td>
+      <td>5.00pm</td>
+    </tr>
+      <tr>
+      <td>Sumith G</td>
+      <td>9.00am</td>
+      <td>3.00pm</td>
+    </tr>
+      <tr>
+      <td>Manu John</td>
+      <td>12.00am</td>
+      <td>3.00pm</td>
+    </tr>
+      <tr>
+      <td>Jobel Kurian</td>
+      <td>10.00am</td>
+      <td>5.00pm</td>
+    </tr>
+      <tr>
+      <td>Vargheese John</td>
+      <td>9.30am</td>
+      <td>3.00pm</td>
+    </tr>
+      <tr>
+      <td>Menaka john</td>
+      <td>10.00am</td>
+      <td>2.00pm</td>
+    </tr>
+  </table>
+
+</div>
+ {% include "footer.html" %}
+</body>
+</html>

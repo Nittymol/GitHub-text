@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+ {% include "header.html" %}
+{% include "user.html" %}
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>viewappointment</title>
+
+    <style>
+
+a.two:link {color:#ff0000;}
+a.two:visited {color:#0000ff;}
+a.two:hover {font-size:150%;}
+
+</style>
+     <style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+</style>
+
+      <style>
+#myTable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+#myTable td, #myTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#myTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#myTable tr:hover {background-color: #ddd;}
+
+#myTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+   <style>
+h1 {
+  text-shadow: 2px 2px;
+}
+</style>
+    <style>
+h3 {
+  text-shadow: 2px 2px 5px red;
+}
+</style>
+    <style>
+#exam1 {
+  border: 4px solid;
+  padding: 5px;
+  box-shadow: 10px 10px;
+  width:500px
+}
+</style>
+
+</head>
+<body>
+
+
+<center><h1>View Appointment</h1></center>
+
+<br><br>
+<center>
+<table border="1px">
+    <table id="myTable">
+    <tr>
+        <th>Token.no</th>
+        <th>username</th>
+        <th>Enter Appointment Date</th>
+        <th>Enter Appointment Time</th>
+        <th>Appointment Reason</th>
+        <th>Department</th>
+        <th>Doctor</th>
+         <th>Delete</th>
+
+    </tr>
+
+    <tr>
+    {% for i in data %}
+        <td>{{i.id}}</td>
+        <td>{{i.username}}</td>
+        <td>{{i.enterappointmentdate}}</td>
+        <td>{{i.enterappointmenttime}}</td>
+        <td>{{i.appointmentreason}}</td>
+        <td>{{i.department}}</td>
+         <td>{{i.doctorname.doctorname}}</td>
+
+        <input type="hidden" name="id" value="{{i.id}}">
+       <td><input type="button" value="delete" onclick="deleteRow(this)"></td>
+    </tr>
+    {% endfor %}
+</table>
+    <script>
+   function deleteRow(r) {
+  var i = r.parentNode.parentNode.rowIndex;
+  document.getElementById("myTable").deleteRow(i);
+}
+</script>
+
+    <br><br><br><br>
+
+    <div id="exam1">
+  <p>A div element with a shadow. The first value is the horizontal offset and the second value is the vertical offset.
+      The shadow color will be inherited from the text color.</p>  <h3> <a href="homen">Consultation Fee</a></h3>
+    </div>
+    <br><br>
+    <p><b><a class="two" href="report" target="_blank">Receipt</a></b></p>
+    <br><br><br>
+</table>
+</center>
+</body>
+
+</html>
